@@ -2,17 +2,16 @@ apiVersion: argoproj.io/v1alpha1
 kind: Application
 metadata:
   name: root-app
-  finalizers:
-  - resources-finalizer.argocd.argoproj.io
+  namespace: argocd
 spec:
   project: default
   source:
     repoURL: https://github.com/radoslawkabulski/argocd-install.git
-    path: charts/root-app/
+    path: root-app
     targetRevision: HEAD
   destination:
     server: https://kubernetes.default.svc
-    namespace: default
+    namespace: argocd
   syncPolicy:
     automated:
       selfHeal: true
