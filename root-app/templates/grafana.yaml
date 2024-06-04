@@ -32,5 +32,6 @@ spec:
       valuesObject:
         server:
           service:
+            enabled: true
             type: NodePort
 
