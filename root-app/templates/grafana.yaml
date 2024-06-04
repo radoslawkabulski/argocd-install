@@ -7,8 +7,13 @@ spec:
   syncPolicy:
     automated:
       selfHeal: true
-      prune: false
-      allowEmpty: true
+      prune: true
+    retry:
+      limit: 2
+      backoff:
+        duration: 5s
+        maxDuration: 3m0s
+        factor: 2
     syncOptions:
       - CreateNamespace=true
   destination:
@@ -21,7 +26,7 @@ spec:
     targetRevision: 6.27.0
     helm:
       releaseName: grafana
-      values: |
+      values: |-
         rbac:
           create: false
       valuesObject:
