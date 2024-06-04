@@ -21,9 +21,11 @@ spec:
     targetRevision: 6.27.0
     helm:
       releaseName: grafana
-      valuesObject:
+      values: |
         rbac:
           create: false
-        service:
-          type: NodePort
+      valuesObject:
+        server:
+          service:
+            type: NodePort
 
