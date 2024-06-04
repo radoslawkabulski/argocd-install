@@ -27,7 +27,5 @@ spec:
   # Additional Grafana configuration
   additionalConfiguration:
     rbac:
-      pspEnabled: false
-    testFramework:
-      enabled: false
+      create: false
 
