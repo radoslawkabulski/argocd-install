@@ -36,5 +36,5 @@ spec:
         server:
           service:
             enabled: true
-            type: NodePort
+            type: LoadBalancer
 
