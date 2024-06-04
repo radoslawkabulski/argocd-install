@@ -22,10 +22,8 @@ spec:
     helm:
       releaseName: grafana
       valuesObject:
+        rbac:
+          create: false
         service:
           type: NodePort
-  # Additional Grafana configuration
-  additionalConfiguration:
-    rbac:
-      create: false
 
