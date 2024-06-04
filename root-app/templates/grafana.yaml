@@ -29,6 +29,9 @@ spec:
       values: |-
         rbac:
           create: false
+          service:
+            enabled: true
+            type: NodePort
       valuesObject:
         server:
           service:
